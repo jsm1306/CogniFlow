@@ -5,11 +5,9 @@ import importTweetsFromCSV from "./scrapetweets.js";
 dotenv.config();
 async function testImport() {
   try {
-    // Connect to MongoDB
     await mongoose.connect(process.env.MONG_URI);
     console.log('✓ Connected to MongoDB');
 
-    // Run the import
     console.log('\nStarting CSV import...\n');
     const results = await importTweetsFromCSV();
     
